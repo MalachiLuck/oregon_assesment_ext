@@ -12,10 +12,12 @@ class Wagon {
         }
     }
     shouldQuarantine() {
-        for (let index = 0; index < this.passengers.length; index += 1) {
-            if (this.passengers[index].isHealthy === false)
-                return true
-        }
+        const sicky = this.passengers.some(passenger => passenger.isHealthy === false)
+        return sicky
+        // for (let index = 0; index < this.passengers.length; index += 1) {
+        //     if (this.passengers[index].isHealthy === false)
+        //         return true
+        // }
     }
     totalFood() {
         let total = 0
